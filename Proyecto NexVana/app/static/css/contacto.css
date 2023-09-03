@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+    color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* Estilos específicos para la página Nosotros */
+.about-us {
+    padding: 0px 0 50px; /* Ajustar el padding superior e inferior */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.about-us h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #FF2F28;
+}
+
+.about-us hr {
+    border: 1px solid #FF2F28;
+    width: 50%;
+    margin: 0 auto 40px auto;
+}
+
+.about-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-member {
+    margin: 20px;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+    background-color: rgba(209, 178, 178, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.about-member:hover {
+    background-color: rgba(255, 47, 40, 0.2);
+    transform: scale(1.2);
+}
+
+.about-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.about-member h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #FF2F28;
+}
+
+.about-member p {
+    font-size: 20px;
+    color: #6C757D;
+}
+
+.about-us .logo {
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-bottom: 10px; /* Ajustar la distancia desde la parte superior */
+    margin-right: 700px; /* Ajustar la distancia desde la derecha */
+    padding: 0 10px; /* Añadir espaciado interno a los lados */
+
+}
+
+/* Ajustar posición del botón "Volver a la página principal" */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FF2F28;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #FF5733;
+}

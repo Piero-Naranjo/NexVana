@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexVana: Peliculas y series </title>
+    <!-- Enlace a CSS -->
+    <link rel="stylesheet" href="{{ data.ruta_css }}">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container" id="principio">
+            <!-- Enlace -->
+            <a href="" class="logo">NexVana</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="{{ data.ruta_menu_img }}" alt="menu-icono">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/nosotros">Nosotros</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            {% if 'username' in session %}
+                <a href="{{ url_for('logout') }}" class="btn-1">Cerrar sesión</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn-1">Iniciar sesión</a>
+            {% endif %}
+        </div>
+
+        <div class="header-content container">
+            <div class="header-1">
+                <img src="{{ data.ruta_flash_img }}" alt="flash">
+                <a href="{{ url_for('pelicula_flash') }}" class="btn-2">Ver ahora</a>
+            </div>
+            <div class="header-2">
+                <h1>Las mejores <br>Peliculas</h1>
+                <img src="{{ data.ruta_play_img }}" alt="Play">
+            </div>
+            
+        </div>
+
+        <script src="{{data.ruta_js}}"></script>
+
+    </header>
+    {% if data.mensaje_exito %}
+    <!-- Agrega aquí el HTML o mensaje que deseas mostrar en caso de éxito -->
+        <div class="mensaje-exito">{{ data.mensaje_exito }}</div>
+    {% endif %}
+<!--primera seccion-->
+    <section class="movies container">
+
+        <h2>Películas más vistas</h2>
+        <hr>
+
+        <!--8peliculas-->
+        <div class="box-container-1">
+        <!--link de la pelicula-->
+        
+            <!caja pelicula 1>
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Miles2') }}">
+                        <img src="{{data.ruta_1_img}}" alt="Miles2">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Spider-Man: A través del Spider-Verso
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 2-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_flash') }}">
+                    <img src="{{data.ruta_2_img}}" alt="Flash">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Flash
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 3-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_mario') }}">
+                    <img src="{{data.ruta_3_img}}" alt="mario">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Super Mario Bros. La película
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 4-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_avatar2') }}">
+                    <img src="{{data.ruta_4_img}}" alt="avatar2">
+                    </a>
+                    <h3>2022</h3>
+                    <p>
+                        Avatar: El Camino del Agua
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 5-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_transformers') }}">
+                        <img src="{{data.ruta_5_img}}" alt="Transformers: El despertar de las bestias">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Transformers: El despertar de las bestias
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 6-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_oppenheimer') }}">
+                        <img src="{{data.ruta_6_img}}" alt="Oppenheimer">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Oppenheimer
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 7-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_barbie') }}">
+                        <img src="{{data.ruta_7_img}}" alt="Barbie">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Barbie
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 8-->
+            <div class="box-1">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_guardianes3') }}">
+                        <img src="{{data.ruta_8_img}}" alt="Guardianes de la Galaxia volumen 3">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Guardianes de la Galaxia volumen 3
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more" id="load-more-1"> Cargar mas </div>
+    </section>
+
+
+<!--segunda seccion-->
+    <section class="movies container">
+
+        <h2>Peliculas de Acción</h2>
+        <hr>
+
+        <!--caja pelicula 9-->
+        <div class="box-container-2">
+            <!caja pelicula 1>
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_dampyr')}}">
+                    <img src="{{data.ruta_9_img}}"  alt="dampyr">
+                    </a>
+                    
+                    <h3>2022</h3>
+                    <p>
+                        Dampyr
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 10-->
+            <div class="box-2">
+                <div class="content">
+
+                    <a href="{{ url_for('pelicula_break_Even')}}">
+                    <img src="{{data.ruta_10_img}}" alt="break_Even">
+                    </a>
+                    <h3>2020</h3>
+                    <p>
+                        Break Even
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 11-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_La_Huésped')}}">
+                    <img src="{{data.ruta_11_img}}" alt="La Huésped">
+                    </a>
+                    <h3>2013</h3>
+                    <p>
+                        La Huésped
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 12-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Hobbit_5ejercitos')}}">
+                    <img src="{{data.ruta_12_img}}" alt="Hobbit_5ejercitos">
+                    </a>
+                    <h3>2014</h3>
+                    <p>
+                        El Hobbit: La Batalla De Los Cinco Ejércitos
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 13-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_elysium')}}">
+                    <img src="{{data.ruta_13_img}}" alt="Elysium">
+                    </a>
+                    <h3>2013</h3>
+                    <p>
+                        Elysium
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 14-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_paradise')}}">
+                    <img src="{{data.ruta_14_img}}" alt="Paradise">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Paradise
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 15-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_megalodon')}}">
+                    <img src="{{data.ruta_15_img}}" alt="Megalodon">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Megalodon
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 16-->
+            <div class="box-2">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Island_Escape')}}">
+                    <img src="{{data.ruta_16_img}}" alt="Island_Escape">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Island_Escape
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more" id="load-more-2"> Cargar mas </div>
+    </section>
+
+
+<!--tercera seccion-->
+    <section class="movies container">
+
+        <h2>Peliculas de Estreno</h2>
+        <hr>
+
+        <!--caja pelicula 17-->
+        <div class="box-container-3">
+            <!caja pelicula 1>
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_gran_turismo')}}">
+                    <img src="{{data.ruta_17_img}}"  alt="Gran_turismo">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Gran Turismo: De jugador a corredor
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 18-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Agente_Stone')}}">
+                    <img src="{{data.ruta_18_img}}" alt="Agente_Stone">
+                    </a>
+                    <h3>Película hd</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 19-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_tristan')}}">
+                    <img src="{{data.ruta_19_img}}" alt="The Seven Deadly Sins">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        The Seven Deadly Sins: El rencor de Edimburgo (Parte 2)
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 20-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Warrior')}}">
+                    <img src="{{data.ruta_20_img}}" alt="Jagun Jagun">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Jagun Jagun: The Warrior
+                    </p>
+                </div>
+            </div>
+            
+            <!--caja pelicula 21-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Football')}}">
+                        <img src="{{data.ruta_21_img}}" alt="Johnny">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Al descubierto: Johnny Football
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 22-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Señal')}}">
+                        <img src="{{data.ruta_22_img}}" alt="Señal">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Divina Señal
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 23-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_Frente')}}">
+                        <img src="{{data.ruta_23_img}}" alt="Frentew">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Frente a Frente
+                    </p>
+                </div>
+            </div>
+
+            <!--caja pelicula 24-->
+            <div class="box-3">
+                <div class="content">
+                    <a href="{{ url_for('pelicula_tortugas')}}">
+                        <img src="{{data.ruta_24_img}}" alt="tortugas nija">
+                    </a>
+                    <h3>2023</h3>
+                    <p>
+                        Tortugas Ninja: Caos mutante
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more" id="load-more-3"> Cargar mas </div>
+    </section>
+
+
+    <footer class="footer container">
+
+        <h3>NexVana</h3>
+        <ul>
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+
+
+    </footer>
+
+
+
+    <a href="#principio"> <img src="{{data.ruta_b_img}}" id="botonArriba"></a>
+    <!-- Enlace a JS -->
+    <script src="{{data.ruta_js}}"></script>
+</body>
+</html>
+
+
+
+
